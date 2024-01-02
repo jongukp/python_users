@@ -18,6 +18,6 @@ def create_app():
     return app
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     app = create_app()
     app.run(host='localhost', debug=True)
