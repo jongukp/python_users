@@ -20,9 +20,8 @@ The application validates emails based on [RFC standards](https://pypi.org/proje
 
 Note: The application is configured to use a SQLite database. If you wish to use a different database, you can change the `SQLALCHEMY_DATABASE_URI` variable in app.py.
 
-### Example Usage with a clean venv
+### Example Usage with a venv
 ```bash
-rm -rf venv
 python3 -m venv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
@@ -37,7 +36,7 @@ Endpoint: `POST /users`
 
 Request body should be a JSON object with the keys `username`, `first_name`, `last_name`, and `email`.
 
-Example:
+Example: in venv, run
 
 ```bash
 curl --location '127.0.0.1:5000/users' \
@@ -52,7 +51,7 @@ curl --location '127.0.0.1:5000/users' \
 ### Get a user
 Endpoint: `GET /users/<username>` where `<username>` is the username of the user you want to get.
 
-Example:
+Example: in venv, run
 
 ```bash
 curl --location '127.0.0.1:5000/users/userA' 
@@ -63,7 +62,7 @@ Endpoint: `GET /users`
 
 You can add a `sort_by` query parameter to sort the users by a specific field. The default is `username`.
 
-Example:
+Example: in venv, run
 
 ```bash
 curl --location --request GET '127.0.0.1:5000/users?sort_by=first_name' \
@@ -75,7 +74,7 @@ Endpoint: `PUT /users/<username>` where `<username>` is the username of the user
 
 Request body should be a JSON object with any of the keys `first_name`, `last_name`, and `email` that you want to update.
 
-Example:
+Example: in venv, run
 
 ```bash
 curl --location --request PUT '127.0.0.1:5000/users/userA' \
